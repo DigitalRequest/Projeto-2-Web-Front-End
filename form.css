@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+
+@keyframes shrinkGrow {
+    0% {
+        transform: scale(100%);
+    }
+
+    50% {
+        transform: scale(20%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
+}
+
+:root[data-theme="light"] {
+    --background: #b3a1a2;
+    --secondary: #d7d0d1;
+    --primary: #df3a47;
+    --accent: #766566;
+    --text: #131011;
+}
+:root[data-theme="dark"] {
+    --background: #030202;
+    --secondary: #2f2829;
+    --primary: #c5202e;
+    --accent: #9a898a;
+    --text: #efeced;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+    background-image: url('fundao.png');
+    
+}
+
+body {
+    font-family: "Poppins";
+    color: var(--text);
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+#btnListaAdmin {
+    background: url("iconList23.png");
+    pointer-events: none;
+    height: 43px;
+    width: 43px;
+    z-index: 99;
+    opacity: 0;
+    left: 49%;
+}
+
+#ListaAdmin {
+    background-color: var(--secondary);
+    filter: brightness(115%);
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    position: relative;
+    z-index: 99;
+    width: 60vh;
+    border-radius: 15px;
+    opacity: 0;
+}
+
+#ListaAdmin #fechaListaAdmin {
+    background: url(iconClose23.svg);
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background-size: 100%;
+    right: 2%;
+    top: 2.4%;
+}
+
+#ListaAdmin #PesquisarEmail {
+    font-size: 1.2rem;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+#ListaAdmin #delAll {
+    background-color: var(--accent);
+    border-radius: 0;
+    color: whitesmoke;
+}
+
+#ListaAdmin h2 {
+    text-align: center;
+}
+
+#ListaAdmin section {
+    background-color: var(--secondary);
+    filter: brightness(95%);
+    padding: 2vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ListaAdmin section:nth-child(even) {
+    background-color: var(--accent);
+    filter: brightness(120%);
+}
+
+#ListaAdmin section button {
+    width: 4vh;
+    height: 4vh;
+    align-self: center;
+}
+
+#ListaAdmin section ul {
+    list-style: none;
+}
+
+.container {
+    position: absolute;
+    background-color: var(--background);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8vh;
+    display: flex;
+    width: 100%;
+    gap: 4vh;
+}
+
+.container form {
+    background-color: var(--secondary);
+    width: clamp(400px, 40%, 500px);
+    clip-path: inset(0 0%);
+    transform-origin: top;
+    border-radius: 20px;
+    position: relative;
+    display: grid;
+    padding: 4vh;
+    gap: 24px;
+    background-image: url('FUNDO.png');
+}
+
+.container form h2 {
+    text-align: center;
+    color: var(--text);
+}
+
+.container form section {
+    position: relative;
+    font-size: 18px;
+    display: grid;
+}
+
+.container form section input,
+.container form section select {
+    border: solid 2px var(--accent);
+    color: var(--text);
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.container form .inputArea span {
+    color: var(--text);
+    pointer-events: none;
+    position: absolute;
+    transition: 0.4s;
+    top: 20%;
+    left: 3%;
+}
+
+.container form .CheckArea,
+.container form .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container form .CheckArea {
+    justify-content: space-between;
+    position: relative;
+    padding-right: 1vh;
+    padding-left: 1vh;
+    display: flex;
+}
+
+input[type="submit"] {
+    color: var(--background) !important;
+    background-color: var(--accent);
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+}
+
+button {
+    background-color: var(--background);
+    border-radius: 6px;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    padding: 0.2em;
+    width: 1em;
+}
+
+input[type="checkbox"]:checked {
+    animation: shrinkGrow 0.15s ease;
+}
+
+input[type="text"]:focus ~ span,
+input[type="text"]:valid ~ span,
+input[type="password"]:focus ~ span,
+input[type="password"]:valid ~ span {
+    font-size: 15px;
+    top: -60%;
+    left: 2%;
+}
